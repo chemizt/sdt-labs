@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component
+{
+  constructor() {
+    super();
+    this.state = {
+      quote: ''
+    };
+    this.requestQuote = this.requestQuote.bind(this);
+    this.requestQuote();
+  }
+
+  requestQuote() {
+    fetch('https://api.kanye.rest').then(response => response.json()).then(result => { this.setState({ quote: result.quote })}).catch(console.log);
+  }
+  
+  render() {
+    return(
+      <div className="App-header">
+        <text>Quote of the Day</text>
+        <p/>
+        <div className="App-quote">
+          <text>{this.state.quote}</text>
+        </div>
+        <p/>
+        <div className="App-button">
+            <p/>
+            <Button variant="primary" size="lg" onClick={this.requestQuote}>Hit me with Wisdom</Button>
+            <p/>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

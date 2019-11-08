@@ -1,3 +1,7 @@
+## Задание
+
+Выводить цитаты с kanye.rest API
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
