@@ -21,7 +21,7 @@ class App extends Component
   render() {
     return(
       <div className="App-header">
-        <text>Quote of the Day</text>
+        <text>Wisdom of the Day</text>
         <p/>
         <div className="App-quote">
           <text>{this.state.quote}</text>
@@ -29,7 +29,7 @@ class App extends Component
         <p/>
         <div className="App-button">
             <p/>
-            <Button variant="primary" size="lg" onClick={this.requestQuote}>Hit me with Wisdom</Button>
+            <Button variant="primary" size="lg" onClick={this.requestQuote}>Bless me with Wisdom</Button>
             <p/>
         </div>
       </div>
