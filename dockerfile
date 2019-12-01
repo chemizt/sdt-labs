@@ -1,9 +1,10 @@
-FROM ubuntu:latest
+FROM node:carbon
 
-RUN apt update
-RUN apt install -y nodejs nodejs-dev npm git
-RUN git clone https://github.com/chemizt/sdt-labs
-RUN cd sdt-labs
-RUN npm install && npm run build && serve -s build
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+RUN npm run build
+CMD ["serve -s build"]
 
 EXPOSE 5000
