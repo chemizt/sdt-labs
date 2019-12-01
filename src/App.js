@@ -21,15 +21,15 @@ class App extends Component
   render() {
     return(
       <div className="App-header">
-        <text>Wisdom of the Day</text>
+        <text data-testid="header-text">Wisdom of the Day</text>
         <p/>
         <div className="App-quote">
-          <text>{this.state.quote}</text>
+          <text data-testid="quote-text">{this.state.quote}</text>
         </div>
         <p/>
         <div className="App-button">
             <p/>
-            <Button variant="primary" size="lg" onClick={this.requestQuote}>Bless me with Wisdom</Button>
+            <Button variant="primary" size="lg" onClick={this.requestQuote} data-testid="query-btn">Bless me with Wisdom</Button>
             <p/>
         </div>
       </div>
