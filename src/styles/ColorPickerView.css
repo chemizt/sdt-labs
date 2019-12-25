@@ -1,0 +1,4 @@
+.colorPickerView {
+    display: flex;
+    flex-direction: row;
+}
